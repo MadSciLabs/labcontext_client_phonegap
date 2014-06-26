@@ -13,12 +13,20 @@ module.exports = [
         "clobbers": [
             "cordova.logger"
         ]
+    },
+    {
+        "file": "plugins/com.randdusing.bluetoothle/www/bluetoothle.js",
+        "id": "com.randdusing.bluetoothle.BluetoothLe",
+        "clobbers": [
+            "window.bluetoothle"
+        ]
     }
 ];
 module.exports.metadata = 
 // TOP OF METADATA
 {
-    "org.apache.cordova.console": "0.2.10-dev"
+    "org.apache.cordova.console": "0.2.10-dev",
+    "com.randdusing.bluetoothle": "1.0.0"
 }
 // BOTTOM OF METADATA
 });

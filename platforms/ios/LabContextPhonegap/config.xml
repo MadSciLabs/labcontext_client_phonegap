@@ -22,6 +22,9 @@
     <feature name="Console">
         <param name="ios-package" value="CDVLogger" />
     </feature>
+    <feature name="BluetoothLePlugin">
+        <param name="ios-package" value="BluetoothLePlugin" />
+    </feature>
     <name>LabContextPhonegap</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

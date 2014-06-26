@@ -33,12 +33,18 @@
         <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
         <!--script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script-->
         
-        <!--script type="text/javascript" src="js/jq.js"></script-->
         <script type="text/javascript" src="js/sb-1.4.1.js"></script>
         <script type="text/javascript" src="js/sb-admin-0.1.4.js"></script>
-        <!--script type="text/javascript" src=js/labcontext.js></script-->
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
         
         <script type="text/javascript">
+
+        //Catch errors and push to console
+        window.onerror = function(message, url, lineNumber) {
+            console.log("Error: "+message+" in "+url+" at line "+lineNumber);
+        }
+
 
         // when page loads call spacebrew setup function
 		//$(window).on("load", createSBInstance);
@@ -49,10 +55,36 @@
 		//Lab Context Object to hold interaction parameters
 		var connection_data;
 	 	var interaction = {};
-		var ip = "72.225.168.21";
+		var ip_client = "198.228.205.236";
+        var ip_server = "72.225.168.21";
 
+        /************************
+         BLE STUFF
+         ************************/
+
+        var addressKey = "address";
+         
+        var heartRateServiceAssignedNumber = "180d";
+        var heartRateMeasurementCharacteristicAssignedNumber = "2a37";
+        var clientCharacteristicConfigDescriptorAssignedNumber = "2902";
+        var batteryServiceAssignedNumber = "180f";
+        var batteryLevelCharacteristicAssignedNumber = "2a19";
+         
+        var scanTimer = null;
+        var connectTimer = null;
+        var reconnectTimer = null;
+         
+        var iOSPlatform = "iOS";
+        var androidPlatform = "Android";
+        
+        var numScanned = 0;
         console.log("STARTING NOW");
-
+        
+        /******************
+         Beacons
+         *********************/
+        var arrBeacons = {};
+        
         </script>
 
     </head>
@@ -67,37 +99,37 @@
 -->
 
 <div id="header">
-    The Lab - Contextual Controls Client
+    Lab Contextual Controls
 </div>
 
-<div id="connection">
-    not connected
+<div id="content_beacon">
+    
+    <div class="beaconSignal">
+    </div>
 </div>
 
-<div id="content">
+<div id="content_description">
     
-    </br></br>
-    <a href="javascript:makeSBConnections()"> connect </a>
-    </br></br>
-    </br></br>
+    <div id="content_description_body"></div>
     
-    <div style="width:500;float:left">
-        
+    <div class="btn_connect" id="connect">Connect</div>
+    <div class="btn_cancel" id="cancel">Cancel</div>
+</div>
+
+<div id="content_play">
+    
+    <div>
+        <div id="left" class="pushbutton_onoff">left</div>
+        <div id="right" class="pushbutton_onoff">right</div>
         <div id="fire" class="pushbutton_onoff">fire</div>
         <div id="thrust" class="pushbutton_onoff">thrust</div>
-        <div id="right" class="pushbutton_onoff">right</div>
-        <div id="left" class="pushbutton_onoff">left</div>
+        
+        
     </div>
-    
-    </br></br>
-    
-    <div id="name">Trying to connect</div>
-    
 </div>
 
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
+
         <script type="text/javascript">
             app.initialize();
         </script>
