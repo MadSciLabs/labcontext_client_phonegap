@@ -53,12 +53,17 @@ var app = {
                                   });
         
         //Create SB Instance
-        //app.createSBInstance();
+        app.createSBInstance();
         
         bluetoothle.initialize(initializeSuccess, initializeError);
         console.log("After BLE Init");
+        
+        //throwAlert("Do you wanna play?","Asteroids","go");
+        
+        console.log("Alerted");
 
     },
+
     // Update DOM on a Received Event
     receivedEvent: function(id) {
         
@@ -444,3 +449,32 @@ function stopScanError(obj)
     console.log("Stop scan error: " + obj.error + " - " + obj.message);
 }
 
+/*
+ *  ALERT STUFF
+ */
+function onConfirm(button) {
+    console.log('You selected button ' + button);
+}
+
+function throwAlert(_msg,_title,_btn)
+{
+    /**********************
+     Alerts
+     **********************/
+    // Android / BlackBerry WebWorks (OS 5.0 and higher) / iPhone
+    //
+    
+
+
+    // Show a custom confirmation dialog
+    //
+    _btnString = _btn + ",Cancel";
+
+    navigator.notification.confirm(
+                                       _msg,  // message
+                                       onConfirm,              // callback to invoke with index of button pressed
+                                       _title,            // title
+                                       _btnString          // buttonLabels
+                                       );
+
+}

@@ -25,6 +25,9 @@
     <feature name="BluetoothLePlugin">
         <param name="ios-package" value="BluetoothLePlugin" />
     </feature>
+    <feature name="Notification">
+        <param name="ios-package" value="CDVNotification" />
+    </feature>
     <name>LabContextPhonegap</name>
     <description>
         A sample Apache Cordova application that responds to the deviceready event.

@@ -41,6 +41,9 @@
 		AD1773E7E27942DDB52ECA1A /* CDVLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C7279DF032A48CBBAE87A23 /* CDVLogger.m */; };
 		BE9E8F12CC8E4D2C985406E4 /* BluetoothLePlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 43BE480FB7214EF29F96A8D0 /* BluetoothLePlugin.m */; };
 		D4A0D8761607E02300AEF8BB /* Default-568h@2x~iphone.png in Resources */ = {isa = PBXBuildFile; fileRef = D4A0D8751607E02300AEF8BB /* Default-568h@2x~iphone.png */; };
+		F027C7EDCFD8411AA9DB60B6 /* CDVNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F27D33CBBC8492489607542 /* CDVNotification.m */; };
+		04512C9D79D6435BAE144F18 /* CDVNotification.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 36269708E1A44B2C99FC54A1 /* CDVNotification.bundle */; };
+		AAA5CBC57F434B5E85A07CDC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 70FC92C054FF4DF3AF5D2496 /* AudioToolbox.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +113,10 @@
 		EB87FDF31871DA8E0020F90C /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../../www; sourceTree = "<group>"; };
 		EB87FDF41871DAF40020F90C /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = ../../config.xml; sourceTree = "<group>"; };
 		F840E1F0165FE0F500CFE078 /* config.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; name = config.xml; path = LabContextPhonegap/config.xml; sourceTree = "<group>"; };
+		4F27D33CBBC8492489607542 /* CDVNotification.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = "CDVNotification.m"; path = "org.apache.cordova.dialogs/CDVNotification.m"; sourceTree = "<group>"; fileEncoding = 4; };
+		FB207CD77CD24584B0C13171 /* CDVNotification.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "CDVNotification.h"; path = "org.apache.cordova.dialogs/CDVNotification.h"; sourceTree = "<group>"; fileEncoding = 4; };
+		36269708E1A44B2C99FC54A1 /* CDVNotification.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = "CDVNotification.bundle"; path = "CDVNotification.bundle"; sourceTree = "<group>"; };
+		70FC92C054FF4DF3AF5D2496 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = 4; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +130,7 @@
 				305D5FD1115AB8F900A74A75 /* MobileCoreServices.framework in Frameworks */,
 				5AEE5B35173C68D80009041E /* CoreLocation.framework in Frameworks */,
 				7FD81CE13849432E806E55E8 /* CoreBluetooth.framework in Frameworks */,
+				AAA5CBC57F434B5E85A07CDC /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -204,6 +212,7 @@
 				308D052D1370CCF300D202BF /* icons */,
 				308D05311370CCF300D202BF /* splash */,
 				8D1107310486CEB800E47090 /* LabContextPhonegap-Info.plist */,
+				36269708E1A44B2C99FC54A1 /* CDVNotification.bundle */,
 			);
 			name = Resources;
 			path = LabContextPhonegap/Resources;
@@ -217,6 +226,7 @@
 				288765FC0DF74451002DB57D /* CoreGraphics.framework */,
 				305D5FD0115AB8F900A74A75 /* MobileCoreServices.framework */,
 				48DBF23D51844CBC9D48EB75 /* CoreBluetooth.framework */,
+				70FC92C054FF4DF3AF5D2496 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -236,6 +246,8 @@
 				1BC0CB96355F47FAA79C2FFA /* CDVLogger.h */,
 				43BE480FB7214EF29F96A8D0 /* BluetoothLePlugin.m */,
 				88E3C649C364487D9F78C21B /* BluetoothLePlugin.h */,
+				4F27D33CBBC8492489607542 /* CDVNotification.m */,
+				FB207CD77CD24584B0C13171 /* CDVNotification.h */,
 			);
 			name = Plugins;
 			path = LabContextPhonegap/Plugins;
@@ -399,6 +411,7 @@
 				7E7966E11810823500FA85AD /* icon-50@2x.png in Resources */,
 				7E7966E51810823500FA85AD /* icon-76@2x.png in Resources */,
 				30FC414916E50CA1004E6F35 /* icon-72@2x.png in Resources */,
+				04512C9D79D6435BAE144F18 /* CDVNotification.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,6 +445,7 @@
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				AD1773E7E27942DDB52ECA1A /* CDVLogger.m in Sources */,
 				BE9E8F12CC8E4D2C985406E4 /* BluetoothLePlugin.m in Sources */,
+				F027C7EDCFD8411AA9DB60B6 /* CDVNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
